@@ -1514,3 +1514,130 @@ html {
         padding: 0 15px 15px 15px;
     }
 }
+
+/* Product Rating Styles */
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.stars {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.rating-text {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.product-detail-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.stars-large {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.rating-text-large {
+    color: var(--muted-foreground);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Social Icons Header Styles */
+.social-icons-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 0.5rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: var(--primary-foreground);
+    text-decoration: none;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-neon);
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-neon-hover);
+}
+
+.social-icon i {
+    color: inherit;
+}
+
+/* Contact Links Styles */
+.contact-card a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+.footer-section a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+/* Mobile Responsive for Social Icons */
+@media (max-width: 768px) {
+    .social-icons-header {
+        gap: 0.5rem;
+    }
+    
+    .social-icon {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons-header {
+        gap: 0.25rem;
+    }
+    
+    .social-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 0.875rem;
+    }
+    
+    .nav-logo {
+        font-size: 1rem;
+    }
+}
