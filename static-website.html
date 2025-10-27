@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر لفل اب - Level Up Store</title>
+    <link rel="stylesheet" href="static-website.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="https://github.com/leve1up321/neon-spark-shop-33/blob/codegen-artifacts-store/logo.png?raw=true" alt="Level Up Store" class="logo-img">
+                Level Up Store
+            </a>
+            
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#reviews">التقييمات</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+                
+                <!-- Language Selector -->
+                <li class="dropdown">
+                    <button class="dropdown-btn" onclick="toggleLanguageDropdown()">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">العربية</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="languageDropdown">
+                        <button onclick="changeLanguage('ar')">العربية</button>
+                        <button onclick="changeLanguage('en')">English</button>
+                    </div>
+                </li>
+                
+                <!-- Currency Selector -->
+                <li class="dropdown">
+                    <button class="dropdown-btn" onclick="toggleCurrencyDropdown()">
+                        <i class="fas fa-coins"></i>
+                        <span id="currentCurrency">ريال</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="currencyDropdown">
+                        <button onclick="changeCurrency('SAR')">ريال سعودي</button>
+                        <button onclick="changeCurrency('USD')">US Dollar</button>
+                        <button onclick="changeCurrency('EUR')">Euro</button>
+                        <button onclick="changeCurrency('AED')">درهم إماراتي</button>
+                        <button onclick="changeCurrency('EGP')">جنيه مصري</button>
+                    </div>
+                </li>
+                
+                <li>
+                    <button class="cart-btn" onclick="toggleCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu-container">
+                <button class="cart-btn mobile-cart" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="mobileCartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#home" onclick="closeMobileMenu()">الرئيسية</a></li>
+                <li><a href="#products" onclick="closeMobileMenu()">المنتجات</a></li>
+                <li><a href="#reviews" onclick="closeMobileMenu()">التقييمات</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-grid"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">متجر لفل اب</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        💡 ابدأ من الصفر وابنِ أول دخل رقمي لك اليوم!
+                    </p>
+                    <p class="hero-description">
+                        اكتشف كيف تحوّل مهاراتك أو وقتك إلى مصدر دخل مستمر من خلال بيع منتجات رقمية بسيطة تحقق لك أرباحًا حتى أثناء نومك 😴💰
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary">ابدأ رحلتك الآن</a>
+                        <a href="#products" class="btn btn-secondary">تسوق الآن</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800" alt="Level Up Store" class="hero-img">
+                    <div class="floating-orb orb-1"></div>
+                    <div class="floating-orb orb-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">من نحن</h2>
+            <p class="section-subtitle">
+                متجر لفل اب – وجهتك لبناء مشروعك الرقمي بأقل التكاليف وأعلى جودة
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>النمو المستمر</h3>
+                    <p>تطوير مستمر للأدوات والمميزات</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>الأمان</h3>
+                    <p>حماية متقدمة لبياناتك</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3>التخزين السحابي</h3>
+                    <p>وصول سريع وآمن لملفاتك</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>السرعة</h3>
+                    <p>أداء فائق السرعة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>الدعم الفني</h3>
+                    <p>فريق متواجد على مدار الساعة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>التعلم الذكي</h3>
+                    <p>أدوات تساعدك على النجاح</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">350+</div>
+                    <div class="stat-label">عميل</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2500+</div>
+                    <div class="stat-label">زائر</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">600+</div>
+                    <div class="stat-label">عملية بيع</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">منتجاتنا</h2>
+            <p class="section-subtitle">
+                اكتشف مجموعتنا المميزة من المنتجات الرقمية
+            </p>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">آراء عملائنا</h2>
+            
+            <div class="rating-card">
+                <div class="rating-number">4.9</div>
+                <div class="rating-stars">★★★★★</div>
+                <p>من أكثر من 350 تقييم</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "منتجات رائعة وجودة عالية. الدعم ممتاز والتسليم سريع! أنصح بشدة بالتعامل مع هذا المتجر."
+                    </p>
+                    <div class="review-author">أحمد محمد</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "تجربة رائعة! المنتجات عالية الجودة والأسعار معقولة. خدمة العملاء ممتازة."
+                    </p>
+                    <div class="review-author">فاطمة أحمد</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "أفضل متجر للمنتجات الرقمية! سرعة في التسليم وجودة عالية. شكراً لكم."
+                    </p>
+                    <div class="review-author">محمد علي</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "خدمة ممتازة ومنتجات مفيدة جداً. ساعدتني في بناء مشروعي الرقمي بنجاح."
+                    </p>
+                    <div class="review-author">سارة خالد</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "فريق محترف وأسعار تنافسية. حصلت على كل ما احتجته لبدء مشروعي."
+                    </p>
+                    <div class="review-author">عمر حسن</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "تجربة مميزة! المنتجات تستحق كل ريال دفعته. أنصح الجميع بالتجربة."
+                    </p>
+                    <div class="review-author">نور الدين</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">اتصل بنا</h2>
+            <h3 class="contact-subtitle">نحب أن نسمع منك!</h3>
+            <p class="section-subtitle">
+                لا تتردد في التواصل معنا عبر أي من الطرق التالية. فريق الدعم جاهز لمساعدتك في كل خطوة من رحلتك الرقمية
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h4>البريد الإلكتروني</h4>
+                    <p>info@levelup.zaher.io</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h4>واتساب</h4>
+                    <p>تواصل معنا</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📷</div>
+                    <h4>انستغرام</h4>
+                    <p>@levelup_store</p>
+                </div>
+            </div>
+
+            <div class="cta-card">
+                <h3>🎯 جاهز للبدء؟</h3>
+                <p>
+                    كل يوم تأجّله هو فرصة ضائعة! ابدأ مشروعك الرقمي اليوم واحصل على دخلك الأول
+                </p>
+                <p class="cta-highlight">
+                    تتعب بالشغل ولا ترى نتائج؟ اكتشف كيف تبيع منتجات رقمية بسهولة 💰
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الأسئلة الشائعة</h2>
+                <p class="section-subtitle">إجابات على أهم الأسئلة التي قد تخطر ببالك</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(1)">
+                        <h3>🔹 1. هل هذا الكتاب مناسب للمبتدئين تمامًا؟</h3>
+                        <i class="fas fa-chevron-down faq-icon" id="faq-icon-1"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-1">
+                        <p>نعم، الكتاب مصمم خصيصًا للمبتدئين اللي ما عندهم أي خبرة سابقة في المشاريع الرقمية. يشرح لك كل فكرة من الصفر، مع الأدوات المجانية اللي تحتاجها، وخطوات عملية بسيطة للتنفيذ.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(2)">
+                        <h3>🔹 2. هل أحتاج رأس مال عشان أبدأ مشروع رقمي؟</h3>
+                        <i class="fas fa-chevron-down faq-icon" id="faq-icon-2"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-2">
+                        <p>أبدًا 💡 أغلب المشاريع الموجودة في الكتاب يمكن تبدأها بدون أي رأس مال، وحتى المشاريع اللي تحتاج أدوات مدفوعة، موضّح فيها البدائل المجانية خطوة بخطوة.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(3)">
+                        <h3>🔹 3. هل الكتاب ملف PDF؟ وكيف أقدر أفتحه بعد الشراء؟</h3>
+                        <i class="fas fa-chevron-down faq-icon" id="faq-icon-3"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-3">
+                        <p>نعم، الكتاب بصيغة PDF تفاعلي يمكنك تحميله فورًا بعد إتمام عملية الدفع. تقدر تفتحه بسهولة على الجوال أو الكمبيوتر أو التابلت في أي وقت.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(4)">
+                        <h3>🔹 4. هل المحتوى منسوخ أو مأخوذ من الإنترنت؟</h3>
+                        <i class="fas fa-chevron-down faq-icon" id="faq-icon-4"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-4">
+                        <p>لا إطلاقًا 🚫 الكتاب مكتوب ومصمّم بالكامل بشكل أصلي وحصري، مبني على خبرات وتجارب حقيقية في المشاريع الرقمية، ومرتب بأسلوب عربي بسيط وسهل التطبيق</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(5)">
+                        <h3>🔹 5. كم يستغرق الوقت حتى أبدأ أحقق دخل من الأفكار؟</h3>
+                        <i class="fas fa-chevron-down faq-icon" id="faq-icon-5"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-5">
+                        <p>يعتمد على الفكرة اللي تختارها ومدى التزامك بالتطبيق، لكن كثير من القرّاء شاركونا إنهم بدأوا يشوفوا نتائج فعلية خلال أول 1 إلى 2 أسابيع من التطبيق المنتظم.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(6)">
+                        <h3>🔹 6. هل في تحديثات مستقبلية للكتاب؟</h3>
+                        <i class="fas fa-chevron-down faq-icon" id="faq-icon-6"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-6">
+                        <p>نعم ✅ عند شراء الكتاب، ستحصل تلقائيًا على تحديثات مجانية مدى الحياة، بما في ذلك أفكار جديدة وأدوات محدثة مع تطور السوق الرقمي.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(7)">
+                        <h3>🔹 7. هل أقدر أسترجع المبلغ لو ما استفدت؟</h3>
+                        <i class="fas fa-chevron-down faq-icon" id="faq-icon-7"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-7">
+                        <p>نحن واثقون أنك ستستفيد بإذن الله 🙏 لكن إن واجهت أي مشكلة حقيقية أو شعرت أن المحتوى ما يناسبك، فيمكنك التواصل معنا خلال 7 أيام من الشراء، وسنراجع حالتك بكل شفافية.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(8)">
+                        <h3>🔹 8. هل الكتاب مفيد للطلاب أو الموظفين؟</h3>
+                        <i class="fas fa-chevron-down faq-icon" id="faq-icon-8"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-8">
+                        <p>بالتأكيد 👨‍💻 الكتاب مناسب لأي شخص حابب يبدأ مصدر دخل جانبي من الإنترنت، سواء طالب، موظف، أو حتى شخص يبحث عن استقلال مالي من العمل التقليدي.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://github.com/leve1up321/neon-spark-shop-33/blob/codegen-artifacts-store/logo.png?raw=true" alt="Level Up Store" class="footer-logo-img">
+                        <h3 class="footer-title">متجر لفل اب</h3>
+                    </div>
+                    <p>وجهتك لبناء مشروعك الرقمي</p>
+                    <p>💡 ابدأ من الصفر وابنِ أول دخل رقمي لك اليوم</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#reviews">التقييمات</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <p>📧 info@levelup.zaher.io</p>
+                    <p>📱 واتساب</p>
+                    <p>📷 @levelup_store</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 متجر لفل اب. جميع الحقوق محفوظة.</p>
+                <p>موثوق به من قبل أكثر من 350+ عميل | 600+ عملية بيع ناجحة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>سلة التسوق</h3>
+                <button class="close-cart" onclick="toggleCart()">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">السلة فارغة</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong><span data-translate="total">المجموع</span>: <span id="cartTotal">0</span></strong>
+                </div>
+                <button class="btn btn-primary checkout-btn" onclick="checkout()">
+                    <span data-translate="checkout">إتمام الشراء</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>متجر لفل اب</h2>
+            <p>جاري التحميل...</p>
+        </div>
+    </div>
+
+    <script src="static-website.js"></script>
+</body>
+</html>
