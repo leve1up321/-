@@ -43,7 +43,9 @@ const languages = {
         
         // Product Details
         backToHome: "العودة للرئيسية",
-        productDescription: "وصف المنتج"
+        productDescription: "وصف المنتج",
+        rating: "تقييم",
+        reviews: "تقييم"
         ,
         
         // FAQ Section
@@ -94,6 +96,9 @@ const languages = {
         // Product Details
         backToHome: "Back to Home",
         productDescription: "Product Description"
+        ,
+        rating: "Rating",
+        reviews: "reviews"
         ,
         
         // FAQ Section
@@ -156,6 +161,9 @@ const products = [
         features: ["PDF تفاعلي", "تحميل فوري", "15+ فكرة مشروع", "خطة عملية"],
         pages: "25 صفحة",
         readingTime: "30 دقيقة"
+        ,
+        rating: 4.8,
+        reviewsCount: 127
     },
     {
         id: 2,
@@ -192,6 +200,9 @@ const products = [
         features: ["PDF احترافي", "تحميل فوري", "خبرة حقيقية", "دخل سلبي"],
         pages: "10 صفحات",
         readingTime: "20 دقيقة"
+        ,
+        rating: 4.6,
+        reviewsCount: 89
     },
     {
         id: 3,
@@ -221,6 +232,9 @@ const products = [
         features: ["دليل للمبتدئين", "أساسيات مهمة", "سعر مناسب", "خطوة أولى"],
         pages: "5 صفحات",
         readingTime: "10 دقائق"
+        ,
+        rating: 4.3,
+        reviewsCount: 45
     }
 ];
 
@@ -392,6 +406,23 @@ function loadProducts() {
     });
 }
 
+// Generate star rating display
+function generateStars(rating) {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+    let stars = '';
+    
+    for (let i = 0; i < fullStars; i++) {
+        stars += '⭐';
+    }
+    
+    if (hasHalfStar) {
+        stars += '⭐';
+    }
+    
+    return stars;
+}
+
 // Create product card element
 function createProductCard(product) {
     const card = document.createElement('div');
@@ -410,6 +441,10 @@ function createProductCard(product) {
         <div class="product-content">
             <h3 class="product-title">${product.title}</h3>
             <p class="product-description">${product.shortDescription || product.description}</p>
+            ${product.rating ? `<div class="product-rating">
+                <div class="stars">${generateStars(product.rating)}</div>
+                <span class="rating-text">${product.rating} (${product.reviewsCount} تقييم)</span>
+            </div>` : ''}
             <div class="product-price">${formatPrice(product.price)}</div>
             <div class="product-actions">
                 <button class="btn btn-primary btn-small" onclick="addToCart(${product.id})">
@@ -545,6 +580,10 @@ function showProductPage(product) {
                     <div class="product-detail-info">
                         <div class="product-category">${product.category}</div>
                         <h1 class="product-detail-title">${product.title}</h1>
+                        ${product.rating ? `<div class="product-detail-rating">
+                            <div class="stars-large">${generateStars(product.rating)}</div>
+                            <span class="rating-text-large">${product.rating} من 5 (${product.reviewsCount} تقييم)</span>
+                        </div>` : ''}
                         <div class="product-detail-price">${formatPrice(product.price)}</div>
                         
                         <div class="product-features">
