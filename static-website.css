@@ -787,6 +787,26 @@ html {
 .contact-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(138, 43, 226, 0.1);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-icon i {
+    font-size: 2.5rem;
+}
+
+.contact-card:hover .contact-icon {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
 }
 
 .contact-card h4 {
@@ -887,6 +907,15 @@ html {
 .footer-section p {
     color: var(--muted-foreground);
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-section p i {
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
 }
 
 .footer-bottom {
